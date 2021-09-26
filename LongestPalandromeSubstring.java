@@ -8,8 +8,11 @@ public class LongestPalandromeSubstring {
         for(int i = 0; i<str.length(); i++){
             if(stringCharacters.contains( str.charAt(i) ) ){
                 String palandromSubString = str.substring(0, i);
-                String reverserPalandromeString = new StringBuilder(palandromSubString).toString();
-                if (palandromSubString == reverserPalandromeString) return palandromSubString;
+                String reverserPalandromeString = new StringBuilder(palandromSubString).reverse().toString();
+                if (palandromSubString.equals(reverserPalandromeString) ) return palandromSubString;
+            }
+            else{
+                stringCharacters.add(str.charAt(i));
             }
         }
         return Character.toString(str.charAt(0));
